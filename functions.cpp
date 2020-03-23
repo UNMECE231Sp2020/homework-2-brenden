@@ -1,4 +1,5 @@
 #include <iostream>
+//TODO: this should be <cmath>
 #include <Math.h>
 #include "declarations.h"
 
@@ -21,10 +22,12 @@ Complex::~Complex(){
 	std::cout << "Done" << std::endl;
 }
 
+//TODO: According to declarations.h shouldn't this be RealNumberGen()?
 double Complex::real() const {
 	return _real;
 }
 
+//TODO: According to declarations.h shouldn't this be ImagNumberGen()?
 double Complex::imag() const {
 	return _imag;
 }
@@ -53,6 +56,7 @@ Complex Complex::mult(Complex c1){
 }
 
 Complex Complex::div(Complex c1){
+	//TODO: I think you mean c1.magnitude()
 	double denom = c1.magnitude*c1.magnitude;
 	if (denom == 0){
 		Complex Fun(0, 0);
@@ -69,6 +73,7 @@ Complex Complex::div(Complex c1){
 }
 
 double Complex::magnitude() {
+	//TODO: remove both {} pairs, they are not doing what you think they are
 	double result = sqrt({_real*_real} + {_imag*_imag});
 	return result;
 }
@@ -100,13 +105,13 @@ Complex Complex::operator=(Complex c1){
 }
 
 std::ostream& operator << (std::ostream &out, const Complex &c1){
-       if (c1.imag() < 0){
+    if (c1.imag() < 0){
 		double temp = -1*c1.imag();
  		out << c1.real() << "-" << temp << "j";
 	}
 	else {
-	out << c1.real() << "+" << temp << "j";
-	return out;
+		out << c1.real() << "+" << temp << "j";
+		return out;
 	}
 }
 
@@ -114,15 +119,3 @@ std::istream& operator >> (std::istream &in, Complex &c1){
 	in >> c1._real >> c1._imag;
 	return in;
 }
-
-
-
-
-
-
-	
-
-
-
-
-

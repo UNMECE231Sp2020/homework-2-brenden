@@ -31,8 +31,8 @@ class Complex {
 		Complex operator/ (Complex value);
 		Complex operator= (Complex value);
 
-std::ostream& operator << (std::ostream &out, const Complex &c1);
-std::istream& operator >> (std::istream &in, Complex &c1);
+		std::ostream& operator << (std::ostream &out, const Complex &c1);
+		std::istream& operator >> (std::istream &in, Complex &c1);
 
 };
 
